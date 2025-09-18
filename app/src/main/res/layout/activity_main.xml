@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:text="Google FlexBox Layout Demo"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Demo 1: Basic Row Layout -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="1. Basic Row Layout (flexWrap=wrap)"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/flexbox_basic_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:alignItems="center"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="flex_start">
+
+            <TextView
+                style="@style/FlexItem"
+                android:background="#FF6B6B"
+                android:text="Item 1" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:background="#4ECDC4"
+                android:text="Item 2\nLonger Text" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:background="#45B7D1"
+                android:text="Item 3" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:background="#96CEB4"
+                android:text="Item 4" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:background="#FFEAA7"
+                android:text="Item 5" />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <!-- Demo 2: Column Layout -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="2. Column Layout"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="32dp"
+            app:alignItems="center"
+            app:flexDirection="column"
+            app:flexWrap="wrap"
+            app:justifyContent="space_between">
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="80dp"
+                android:background="#FF6B6B"
+                android:text="Col 1" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="100dp"
+                android:background="#4ECDC4"
+                android:text="Col 2" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="120dp"
+                android:background="#45B7D1"
+                android:text="Col 3" />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <!-- Demo 3: Justify Content Examples -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="3. Justify Content: space_around"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/flexbox_justify_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:alignItems="center"
+            app:flexDirection="row"
+            app:flexWrap="nowrap"
+            app:justifyContent="space_around">
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="60dp"
+                android:background="#FF6B6B"
+                android:text="A" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="60dp"
+                android:background="#4ECDC4"
+                android:text="B" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="60dp"
+                android:background="#45B7D1"
+                android:text="C" />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <!-- Demo 4: Align Items Examples -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="4. Align Items: flex_end"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="32dp"
+            app:alignItems="flex_end"
+            app:flexDirection="row"
+            app:flexWrap="nowrap"
+            app:justifyContent="flex_start">
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="#FF6B6B"
+                android:text="Short" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:background="#4ECDC4"
+                android:text="Medium\nText" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="#45B7D1"
+                android:text="Tall\nText\nHere" />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <!-- Demo 5: Flex Grow -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="5. Flex Grow (Item 2 grows to fill space)"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:alignItems="center"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="flex_start">
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF6B6B"
+                android:ellipsize="none"
+                android:text="Grows to fill dkshfjdshjjhfkdj"
+                app:layout_flexGrow="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_flexGrow="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#4ECDC4"
+                    android:text="Maturity Date kdjkfjdjhgh" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#45B7D1"
+                    android:text="10/12/2025" />
+            </LinearLayout>
+
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <!-- Demo 6: Align Self -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="6. Align Self (Item 2 aligns to flex_end)"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="32dp"
+            app:alignItems="flex_start"
+            app:flexDirection="row"
+            app:flexWrap="nowrap"
+            app:justifyContent="flex_start">
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="80dp"
+                android:background="#FF6B6B"
+                android:text="Normal" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="80dp"
+                android:background="#4ECDC4"
+                android:text="End\nAligned"
+                app:layout_alignSelf="flex_end" />
+
+            <TextView
+                style="@style/FlexItem"
+                android:layout_width="80dp"
+                android:background="#45B7D1"
+                android:text="Normal" />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </LinearLayout>
+
+</ScrollView>
