@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -22,6 +22,61 @@
             android:text="Google FlexBox Layout Demo"
             android:textSize="24sp"
             android:textStyle="bold" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+       <androidx.appcompat.widget.AppCompatRadioButton
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:checked="true"/>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:alignItems="center"
+            app:flexDirection="row"
+            app:flexWrap="wrap">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/FlexItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF6B6B"
+                android:ellipsize="none"
+                app:layout_flexBasisPercent="50%"
+                android:text="APY del 1.70%"
+                app:layout_flexGrow="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_flexBasisPercent="50%"
+                app:layout_flexGrow="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#4ECDC4"
+                    android:text="Fetch de Vencimient" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#45B7D1"
+                    android:text="10/12/2025" />
+            </LinearLayout>
+
+
+        </com.google.android.flexbox.FlexboxLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
         <!-- Demo 1: Basic Row Layout -->
         <TextView
@@ -232,54 +287,6 @@
 
         </com.google.android.flexbox.FlexboxLayout>
 
-        <!-- Demo 5: Flex Grow -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="5. Flex Grow (Item 2 grows to fill space)"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <com.google.android.flexbox.FlexboxLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            app:alignItems="center"
-            app:flexDirection="row"
-            app:flexWrap="wrap"
-            app:justifyContent="flex_start">
-
-            <TextView
-                style="@style/FlexItem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FF6B6B"
-                android:ellipsize="none"
-                android:text="Grows to fill dkshfjdshjjhfkdj"
-                app:layout_flexGrow="1" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_flexGrow="1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#4ECDC4"
-                    android:text="Maturity Date kdjkfjdjhgh" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#45B7D1"
-                    android:text="10/12/2025" />
-            </LinearLayout>
-
-
-        </com.google.android.flexbox.FlexboxLayout>
 
         <!-- Demo 6: Align Self -->
         <TextView
@@ -320,6 +327,6 @@
 
         </com.google.android.flexbox.FlexboxLayout>
 
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </ScrollView>
