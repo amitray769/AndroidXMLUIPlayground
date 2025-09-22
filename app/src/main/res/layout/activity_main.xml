@@ -69,6 +69,51 @@
 
         </com.google.android.flexbox.FlexboxLayout>
 
+    <!-- Demo 1b: Row Layout (flexWrap=nowrap) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="1b. Row Layout (flexWrap=nowrap)"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexbox_basic_row_nowrap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:alignItems="center"
+        app:flexDirection="row"
+        app:flexWrap="nowrap"
+        app:justifyContent="flex_start">
+
+        <TextView
+            style="@style/FlexItem"
+            android:background="#FF6B6B"
+            android:text="Item 1" />
+
+        <TextView
+            style="@style/FlexItem"
+            android:background="#4ECDC4"
+            android:text="Item 2\nLonger Text" />
+
+        <TextView
+            style="@style/FlexItem"
+            android:background="#45B7D1"
+            android:text="Item 3" />
+
+        <TextView
+            style="@style/FlexItem"
+            android:background="#96CEB4"
+            android:text="Item 4" />
+
+        <TextView
+            style="@style/FlexItem"
+            android:background="#FFEAA7"
+            android:text="Item 5" />
+
+    </com.google.android.flexbox.FlexboxLayout>
         <!-- Demo 2: Column Layout -->
         <TextView
             android:layout_width="wrap_content"
